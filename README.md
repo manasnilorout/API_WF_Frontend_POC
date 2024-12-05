@@ -1,54 +1,104 @@
-![](https://github.com/xyflow/web/blob/main/assets/codesandbox-header-ts.png?raw=true)
+# API Workflow Builder
 
-# React Flow starter (Vite + TS)
+A React-based visual workflow builder for designing API integrations using a drag-and-drop interface. Built with React Flow and TypeScript.
 
-We've put together this template to serve as a starting point for folks
-interested in React Flow. You can use this both as a base for your own React
-Flow applications, or for small experiments or bug reports.
+## Features
 
-**TypeScript not your thing?** We also have a vanilla JavaScript starter template,
-just for you!
+- 🔄 Visual Workflow Builder
+  - Drag and drop nodes to create workflows
+  - Connect nodes to establish data flow
+  - Interactive canvas with zoom and pan capabilities
 
-## Getting up and running
+- 🧩 Node Types
+  - **API Nodes**: For HTTP endpoints and responses
+  - **Connector Nodes**: Pre-built integrations with popular services
+    - Salesforce
+    - SAP S4Hana
+    - Jira
+    - Oracle
+    - Slack
+  - **JavaScript Nodes**: For conditional logic and data transformation
 
-You can get this template without forking/cloning the repo using `degit`:
+- 🎨 Modern UI Features
+  - Searchable connector selection
+  - Operation dropdown with descriptions
+  - Keyboard navigation support
+  - Responsive design
 
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v16 or higher)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
 ```bash
-npx degit xyflow/vite-react-flow-template your-app-name
+git clone [repository-url]
+cd api-workflow-frontend
 ```
 
-The template contains mostly the minimum dependencies to get up and running, but
-also includes eslint and some additional rules to help you write React code that
-is less likely to run into issues:
-
+2. Install dependencies:
 ```bash
-npm install # or `pnpm install` or `yarn install`
+npm install
 ```
 
-Vite is a great development server and build tool that we recommend our users to
-use. You can start a development server with:
-
+3. Start the development server:
 ```bash
 npm run dev
 ```
 
-While the development server is running, changes you make to the code will be
-automatically reflected in the browser!
+The application will be available at `http://localhost:5173`
 
-## Things to try:
+## Usage
 
-- Create a new custom node inside `src/nodes/` (don't forget to export it from `src/nodes/index.ts`).
-- Change how things look by [overriding some of the built-in classes](https://reactflow.dev/learn/customization/theming#overriding-built-in-classes).
-- Add a layouting library to [position your nodes automatically](https://reactflow.dev/learn/layouting/layouting)
+1. **Creating a Workflow**
+   - Drag nodes from the sidebar onto the canvas
+   - Connect nodes by dragging from one handle to another
+   - Configure nodes by clicking on them
 
-## Resources
+2. **Configuring Connectors**
+   - Click on a connector node to select a service (e.g., Salesforce, SAP)
+   - Choose from available operations for the selected service
+   - Configure operation-specific parameters
 
-Links:
+3. **Adding Logic**
+   - Use JavaScript nodes for conditions and transformations
+   - Connect true/false paths for conditional branching
 
-- [React Flow - Docs](https://reactflow.dev)
-- [React Flow - Discord](https://discord.com/invite/Bqt6xrs)
+## Project Structure
 
-Learn:
+```
+src/
+├── components/          # Reusable React components
+│   ├── ConnectorModal.tsx
+│   ├── OperationModal.tsx
+│   └── Sidebar.tsx
+├── nodes/              # Custom node implementations
+│   ├── ApiNode.tsx
+│   ├── ConnectorNode.tsx
+│   └── JsNode.tsx
+├── App.tsx            # Main application component
+└── index.css          # Global styles
+```
 
-- [React Flow – Custom Nodes](https://reactflow.dev/learn/customization/custom-nodes)
-- [React Flow – Layouting](https://reactflow.dev/learn/layouting/layouting)
+## Technologies Used
+
+- [React](https://reactjs.org/)
+- [React Flow](https://reactflow.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Vite](https://vitejs.dev/)
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (\`git checkout -b feature/AmazingFeature\`)
+3. Commit your changes (\`git commit -m 'Add some AmazingFeature'\`)
+4. Push to the branch (\`git push origin feature/AmazingFeature\`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
